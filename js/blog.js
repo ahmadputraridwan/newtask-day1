@@ -14,15 +14,15 @@ const data = [];
   // duration
   
   // icon
-  const tech1 = `<li><img src="/images/nextjs.png" alt="nextjs"></li>`;
-  const tech2 = `<li><img src="./images/nodejs.png" alt="nodejs"></li>`;
-  const tech3 = `<li><img src="/images/reactjs.png" alt="react"></li>`;
-  const tech4 = ` <li><img src="/images/typescript.png" alt="typescript"></li>`;
+  const  JS = `<li><i class="fa-brands fa-js"></i></li>`;
+  const  java = `<li<i class="fa-brands fa-java"></i></li>`;
+  const phyton = `<li><i class="fa-brands fa-python"></i></li>`;
+  const  node = ` <li><i class="fa-brands fa-node"></i></li>`;
   
-  NodeJS = document.getElementById('tech1').checked ? tech1 : '';
-  ReactJs = document.getElementById('tech2').checked ? tech2 : '';
-  Typescript = document.getElementById('tech3').checked ?  tech3 : '';
-  NextJs = document.getElementById('tech4').checked ? tech4 : '';
+ Javascript = document.getElementById('JS').checked ? JS : '';
+  Java = document.getElementById('java').checked ? java : '';
+  Phyton = document.getElementById('phyton').checked ?  phyton : '';
+  NodeJS = document.getElementById('node').checked ? node : '';
 
 // validation
 if (title === ''){
@@ -77,9 +77,9 @@ const obj = {
   content,
   image,
   NodeJS,
-  ReactJs,
-  Typescript,
-  NextJs,
+  Phyton,
+  Javascript,
+  Java,
   postAt: new Date(),
   author: 'Ahmad',
   duration,
@@ -93,13 +93,13 @@ renderProject();
  }
 
 function renderProject() {
-  document.getElementById('project-list').innerHTML = '';
+  document.getElementById('project-li').innerHTML = '';
   
   for (let x = 0; x < data.length; x++){
     console.log(data[x]);
     
-    document.getElementById('project-list').innerHTML +=`
-    <div class="project-list" id="project-list">
+    document.getElementById('project-li').innerHTML +=`
+    <div class="project-list" id="project-li">
     <div class="project-container" id="project-item">
     <a href="/projectd-detail.html">
     <div class="project-image">
@@ -115,9 +115,9 @@ function renderProject() {
     
     <div class="project-icon">                    
     <ul>
-    ${data[x].NextJs}
-    ${data[x].ReactJs}
-    ${data[x].Typescript}
+    ${data[x].Javascript}
+    ${data[x].Java}
+    ${data[x].Phyton}
     ${data[x].NodeJS}
     </ul>
     </div>
@@ -130,5 +130,3 @@ function renderProject() {
     </div>`
   }
 }
-
-// add duration in days

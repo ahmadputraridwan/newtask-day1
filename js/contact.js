@@ -19,7 +19,7 @@ function getData(){
 // excute to email
   const emailReceiver = 'aditiasaputra180897@gmail.com'
   let a = document.createElement('a')
-  a.href = `mailto:${emailReceiver}?subject=${subject}&body= Halo nama saya${name},bisakah anda menghubungi saya di ${phone}, untuk membahas project ${message}`
+  a.href = `mailto:${emailReceiver}?subject=${subject}&body= Halo nama saya ${name},bisakah anda menghubungi saya di ${phone}, untuk membahas project ${message}`
   a.click()
 
   // untuk menangkap data

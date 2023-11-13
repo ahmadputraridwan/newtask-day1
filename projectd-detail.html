@@ -8,29 +8,40 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
   integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="/css/navbar.css">
-  <link rel="stylesheet" href="/css/project-detail.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <!-- navbar -->
   <nav>
-  <div class="nav-left">
-    <ul>
-      <img src="/images/logo1 p.png" alt="nav-img">
-        <li>
-          <a href="/index.html"> Home </a>
-        </li>
-        <li>
-          <a href="/myproject.html"> My Project </a>
-        </li>
-    </ul>
-  </div>
-  <div class="nav-right">
-    <a href="/contact.html"> Contact Me </a>
-  </div>
-</nav>
-<!-- end of navbar -->
+    <div class="nav-left">
+        <ul>
+            <img src="/images/logo1 p.png" alt="logo" />
+            <li>
+                <a class="item-collapse" href="./index.html">Home</a>
+            </li>
+            <li>
+                <a class="item-collapse" href="/my-project.html">My Project</a>
+            </li>
+        </ul>
+    </div>
 
+    <div class="nav-right">
+        <a href="/contact.html"> Contact Me</a>
+    </div>
+<!-- Hamburger Nav -->
+
+    <div class="burger-nav">
+        <button class="burger-button" onclick="openBurger()">
+            <i class="fa-2x fa-solid fa-bars"></i>
+        </button>
+    </div>
+</nav>
+<div class="burger-container" id="burger-container">
+    <a href="/index.html">Home</a>
+    <a href="/my-project.html">My Project</a>
+    <a href="/contact.html" >Contact Me</a>
+</div>
+<!-- End Navbar -->
    <!-- Start Content -->
    <div class="main-container">
     <h1> Dumbways Web App </h1>
@@ -95,6 +106,6 @@
 
 </div>
 <!-- End Content -->
-
+<script src="/js/hamburger.js"></script>
 </body>
 </html>
