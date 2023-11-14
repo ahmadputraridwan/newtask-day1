@@ -447,6 +447,84 @@ form div h1 {
 .project-icon i {
     font-size: 50px;
 }
+/* testimonial */
+.testi-container{
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.testi-container h2, h1 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.testimonial{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+}
+.testimoni {
+width: 25%;
+margin: 0px 15px 30px 15px;
+padding: 20px;
+background-color: #fff;
+}
+.profile-testi{
+    object-fit: cover;
+    /* width: 200px; */
+    aspect-ratio: 1/1;
+}
+.ratting-5{
+    display: flex;
+    justify-content: center;
+    justify-content: end;
+}
+.ratting-5 i{
+    color: gold;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.quote{
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.5;
+}
+.author{
+    font-weight: bold;
+    text-align: right;
+}
+.container-ratting{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-testi{
+    width: 100%;
+}
+.ratting{
+    display: flex;
+    justify-content: center;
+}
+.btn-rate {
+margin: 20px;
+padding: 0px 10px;
+font-size: 20px;
+font-weight: bold;
+background-color: transparent;
+color: white;
+cursor: pointer;
+border: none;
+}
+.btn-rate:hover {
+color: gold;
+}
+.btn-rate:hover{
+    background-color: transparent;
+}
+
 
 /* lg */
 @media only screen and (max-width: 1024px) {
@@ -507,6 +585,13 @@ form div h1 {
     .upper, .center {
         text-align: center;
     }
+    /* testi */
+    .profile-testi {
+        width: 98%;
+    }
+    .testimoni{
+        width: 50%;
+    }
 }
 
 /* Mobile M */
@@ -545,7 +630,13 @@ form div h1 {
         padding: 0px 10px;
         margin-top: 50px;
     }
-    
-
+    /* testimoni */
+.ratting{
+    display: flex;
+    flex-wrap: wrap;
+}
+.testi-container{
+    font-size: 0.7rem;
+}
 
 }

@@ -22,7 +22,7 @@
                         <a class="item-collapse" href="/my-project.html">My Project</a>
                     </li>
                     <li>
-                      <a class="item-collapse" href="/testimoni.html">Testimoni</a>
+                      <a class="item-collapse" href="/testimoni.html" >Testimoni</a>
                   </li>
                 </ul>
             </div>
@@ -41,52 +41,37 @@
         <div class="burger-container" id="burger-container">
             <a href="/index.html">Home</a>
             <a href="/my-project.html">My Project</a>
-            <a href="/testimoni.html"> Testimoni </a>
-            <a href="/contact.html" class="burger-active">Contact Me</a>
+            <a href="/testimoni.html" class="burger-active"> Testimoni </a>
+            <a href="/contact.html">Contact Me</a>
         </div>
         <!-- End Navbar -->
 
-        <!-- Start Contact -->
-        <form class="contact-form">
-            <div>
-                <h1>GET IN TOUCH</h1>
+     <!-- start testimoni -->
+        <div class="testi-container">
+          <h1>My Testimonial</h1>
+          <div class="container-ratting">
+            <h2> Ratting By star</h2>
+            <div class="ratting">
+              <button class="btn-rate" onclick="rattingAll()"><i class="fa-solid fa-star"></i> All </button>
+              <button class="btn-rate" onclick="selectRatting(1)">1<i class="fa-solid fa-star"></i></button>
+              <button class="btn-rate" onclick="selectRatting(2)">2<i class="fa-solid fa-star"></i></button>
+              <button class="btn-rate" onclick="selectRatting(3)">3<i class="fa-solid fa-star"></i></button>
+              <button class="btn-rate" onclick="selectRatting(4)">4<i class="fa-solid fa-star"></i></button>
+              <button class="btn-rate" onclick="selectRatting(5)">5<i class="fa-solid fa-star"></i></button>
             </div>
+          </div>
+          <section class="testimonial" id="testimonial">
 
-            <div>
-                <label for="name">Name</label>
-                <input type="text" id="name">
+            <div class="testimoni">
+              <img src="/images/wisuda.jpeg" alt="testi" class="profile-testi">
+              <p class="quote"> "keren sekali!" </p>
+              <p class="author"> -Fajar Subakti</p>
+              <p class="ratting-5"><i class="fa-solid fa-star">5 </i>
+               </p>
             </div>
-
-            <div>
-                <label for="email">Email</label>
-                <input type="email" id="email">
-            </div>
-
-            <div>
-                <label for="phone">Phone Number</label>
-                <input type="text" id="phone">
-            </div>
-
-            <div>
-                <label for="subject">Subject</label>
-                <select id="subject">
-                    <option disabled selected value> -- select the subject -- </option>
-                    <option>Backend Developer</option>
-                    <option>Frontend Developer</option>
-                    <option>Fullstack Developer</option>
-                </select>
-            </div>
-
-            <div>
-                <label for="message">Your Message</label>
-                <textarea id="message"></textarea>
-            </div>
-
-            <div>
-                <button class="submit" type="button" onclick="getData()">submit</button>
-            </div>
-        </form>
+          </section>
+        </div>
     </body>
-    <script src="/js/contact.js"></script>
+    <script src="/js/testi.js"></script>
     <script src="/js/hamburger.js"></script>
 </html>
