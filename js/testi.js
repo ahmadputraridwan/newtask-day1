@@ -19,7 +19,7 @@ const testi = [
 },
 {
   name : 'Susilo',
-  quote : 'lumayan',
+  quote : 'lumayan!',
   ratting : 2,
   image : '/images/rame.jpeg'
 },
@@ -49,11 +49,10 @@ rattingAll()
 
 
 // filtering function
-// filtering function
 function selectRatting(ratting) {
   let rattingAllHtml = ""
 
-  const dataFilter = testi.filter(data => data.ratting === ratting)
+  const dataFilter = testi.filter((item) => item.ratting === ratting)
 
   if(dataFilter.length === 0) {
       rattingAllHtml = `<h3>Data not found!</h3>`
