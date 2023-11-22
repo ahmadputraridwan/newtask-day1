@@ -4,20 +4,19 @@ const data = [];
   event.preventDefault();
   
   let title = document.getElementById('pName').value
-  let startDate = document.getElementById('s-date').value
-  let endDate = document.getElementById('e-date').value
+  let startDate = document.getElementById('s-Date').value
+  let endDate = document.getElementById('e-Date').value
   let content = document.getElementById('description').value
   let image = document.getElementById('attachFile').files 
   
   
 
-  // duration
   
   // icon
-  const  JS = `<li><i class="fa-brands fa-js"></i></li>`;
-  const  java = `<li<i class="fa-brands fa-java"></i></li>`;
-  const phyton = `<li><i class="fa-brands fa-python"></i></li>`;
-  const  node = ` <li><i class="fa-brands fa-node"></i></li>`;
+  const  JS = `<i class="fa-brands fa-js"></i>`;
+  const  java = `<i class="fa-brands fa-java"></i>`;
+  const phyton = `<i class="fa-brands fa-python"></i>`;
+  const  node = `<i class="fa-brands fa-node"></i>`;
   
  Javascript = document.getElementById('JS').checked ? JS : '';
   Java = document.getElementById('java').checked ? java : '';
@@ -93,40 +92,43 @@ renderProject();
  }
 
 function renderProject() {
-  document.getElementById('project-li').innerHTML = '';
+  document.getElementById('Project').innerHTML = '';
   
   for (let x = 0; x < data.length; x++){
     console.log(data[x]);
     
-    document.getElementById('project-li').innerHTML +=`
-    <div class="project-list" id="project-li">
-    <div class="project-container" id="project-item">
-    <a href="/projectd-detail.html">
-    <div class="project-image">
-    <img src="${data[x].image}">
+    document.getElementById('Project').innerHTML +=`
+    <div  class="d-flex justify-content-center flex-wrap gap-3 p-4 mt-3  " id="Project">
+    <div class=" d-flex flex-column justify-content-between border rounded p-4 " style="background-color: #004643; width: 23%; max-height: 21%;">
+      <div class="">
+        <img style=" height: 190px; border-radius: 7px;" src="${data[x].image}" alt="error" />
+      </div>
+      <div class="">
+        <a class="nav-link text-light fw-bold fs-5" href="/projectd-detail.html">${data[x].title}</a>
+        <div class="text-light" style="font-size: 10px; font-weight: 200;">
+          <p > ${data[x].duration} |${data[x].author}</p>
+        </div>
+
+        <p class="text-light" style="text-align: justify;">
+          ${data[x].content}
+        </p>
+      </div>
+      <div class="mb-2" style="font-size: 2em; display: flex; justify-content: center; gap: 1em;">                    
+       ${data[x].Javascript}
+       ${data[x].Java}
+       ${data[x].Phyton}
+       ${data[x].NodeJS}
+</div>
+
+      <div class="d-flex justify-content-center  align-items-end  mt-2  gap-3" style="width: 100%;">
+        <div class="w-50">
+          <button class="d-flex justify-content-center border-0  fw-bold" style=" padding: 3px 35px; background-color: #156079;">Delete</button>
+        </div>
+        <div class="w-50">
+          <button class="d-flex justify-content-center border-0  fw-bold" style=" padding: 3px 46px;  margin-left: 2px;  background-color: #1f6086;">Edit</button>
+        </div>
+      </div>
     </div>
-    <p style="font-weight: bold;"> ${data[x].title} </p>
-    <p style="font-size: 15px; color: black ;"> ${data[x].duration} | ${data[x].author} </p>
-    
-    <div class="project-content">
-    <p> ${data[x].content}
-    </p>
-    </div>
-    
-    <div class="project-icon">                    
-    <ul>
-    ${data[x].Javascript}
-    ${data[x].Java}
-    ${data[x].Phyton}
-    ${data[x].NodeJS}
-    </ul>
-    </div>
-    <div class="project-button">
-    <button class="edit" type="button">Edit</button>
-    <button class="delete" type="button">Delete</button>
-    </div>
-    </a>
-    </div>
-    </div>`
+</div>`
   }
 }

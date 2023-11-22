@@ -35,12 +35,16 @@ function rattingAll(){
 
   testi.forEach(item => {
     rattingAllHtml += `
-    <div class="testimoni">
-              <img src=${item.image} alt="testi" class="profile-testi">
-              <p class="quote"> "${item.quote}" </p>
-              <p class="author"> ${item.name}</p>
-              <p class="ratting-5"><i class="fa-solid fa-star">${item.ratting} </i>
-               </p>
+    <div class="container">
+              <div class="card" style="width: 14rem; background-color: aliceblue;">
+                <img src="${item.image}" class="card-img-top " style="width:auto; object-fit: cover;"; alt="saya">
+                <div class="card-body">
+                  <p class="card-text text-start">- "${item.quote}" </p>
+                  <p class="author text-end"> -${item.name}</p>
+                  <p class="ratting-5 text-end"> <i class="fa-solid fa-star"> ${item.ratting} </i>
+                  </p>
+                </div>
+              </div>
             </div>`;
   });
   document.getElementById('testimonial').innerHTML = rattingAllHtml
@@ -59,12 +63,16 @@ function selectRatting(ratting) {
   } else {
       dataFilter.forEach(item => {
           rattingAllHtml += `
-          <div class="testimoni">
-              <img src=${item.image} alt="testi" class="profile-testi">
-              <p class="quote"> ${item.quote} </p>
-              <p class="author"> ${item.name}</p>
-              <p class="ratting-5"><i class="fa-solid fa-star">${item.ratting} </i>
-               </p>
+          <div class="container">
+              <div class="card" style="width: 14rem; background-color: aliceblue;">
+                <img src="${item.image}" class="card-img-top " style="width:auto; object-fit: cover;"; alt="saya">
+                <div class="card-body">
+                  <p class="card-text text-start">- "${item.quote}" </p>
+                  <p class="author text-end"> -${item.name}</p>
+                  <p class="ratting-5 text-end"> <i class="fa-solid fa-star"> ${item.ratting} </i>
+                  </p>
+                </div>
+              </div>
             </div>`;
       })
   }
