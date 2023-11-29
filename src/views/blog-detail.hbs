@@ -42,7 +42,7 @@ background-position: center;
             <a class="nav-link"  href="/">Home</a>
           </li>
           <li class="nav-item me-3">
-            <a class="nav-link "  href="/add-blog">Blog</a>
+            <a class="nav-link "  href="/blog">Blog</a>
           </li>
           <li class="nav-item me-2">
             <a class="nav-link" href="/testimoni">Testimonial</a>
@@ -58,22 +58,22 @@ background-position: center;
   <!--end-navbar-->
    <!-- Start Content -->
    <div class="main-container">
-    <h1>{{data.id}} {{data.pName}} </h1>
+    <h1> {{data.pName}} </h1>
     <div class="upper-main">
         <div class="upper-left-main">
             <img src="/images/blog-img.png">
         </div>
         <div class="upper-right-main">
             <div class="duration">
-                <h2> Duration </h2>
+                <h2>Durasi </h2>
                 <ul>
                     <li>
                       <i class="fa-regular fa-calendar-days"></i>
-                        <p>1 Oct 2023 - 31 Oct 2023</p>
+                        <p>{{data.postAt}}</p>
                     </li>
                     <li>
                       <i class="fa-solid fa-clock-rotate-left"></i>
-                        <p>1 Month</p>
+                        <p>{{data.duration}}</p>
                     </li>
                 </ul>
             </div>
@@ -82,16 +82,24 @@ background-position: center;
                 <p>Technologies</p>        
                 <ul>
                     <li>
-                      <i class="fa-brands fa-node"></i>
+                      {{#if data.js}}
+                          <i class="fa-brands fa-js"></i>
+                        {{/if}}
                     </li>
                     <li>
-                      <i class="fa-brands fa-react"></i>
+                       {{#if data.java}}
+                          <i class="fa-brands fa-java"></i>
+                        {{/if}}
                     </li>
                     <li>
-                      <i class="fa-brands fa-python"></i>
+                       {{#if data.phyton}}
+                          <i class="fa-brands fa-python"></i>
+                        {{/if}}
                     </li>
                     <li>
-                      <i class="fa-brands fa-php"></i>
+                     {{#if data.node}}
+                           <i class="fa-brands fa-node"></i>
+                        {{/if}}
                     </li>
                 </ul>
             </div>

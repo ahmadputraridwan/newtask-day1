@@ -40,7 +40,7 @@ background-position: center;
             <a class="nav-link"  href="/">Home</a>
           </li>
           <li class="nav-item me-3">
-            <a class="nav-link active fw-bold"  href="/add-blog">Blog</a>
+            <a class="nav-link active fw-bold"  href="/blog">Blog</a>
           </li>
           <li class="nav-item me-2">
             <a class="nav-link" href="/testimoni">Testimonial</a>
@@ -57,10 +57,11 @@ background-position: center;
 <div class="container my-5  ">
   <h2 class="text-center fw-bold text-light"> Update Post Blog</h2>
 <form class="w-50 mx-auto" method="post" action="/update-blog">
+<input type="hidden" name="id" value="{{data.id}}" />
   
   <div class="mb-3">
     <label for="pName" class="form-label fw-bold  text-light"> Project Name </label>
-    <input type="text" class="form-control border border-black" id="pName" name="pName">
+    <input type="text" class="form-control border border-black" id="pName" name="pName" {{data.pName}}>
     <div class="mb-3 d-flex flex-column flex-sm-row justify-content-between gap-2 mt-3" > 
         <div class="w-100 mb-2 "> 
             <label for="s-Date" class="form-label fw-bold text-light">Start Date</label> 
@@ -81,17 +82,17 @@ background-position: center;
   <div class="">
     <label class="fw-bold text-light"> Tecnologies </label>
   <div>
-    <input type="checkbox" value="js" id="js" name="js">
+    <input type="checkbox" value="js" id="js" name="js" {{#if data.js}} checked {{/if}}>
     <label class="text-light " for="js"> Javascript </label>
     
-    <input class=" ms-4" type="checkbox" value="java" id="java" name="java">
+    <input class=" ms-4" type="checkbox" value="java" id="java" name="java" {{#if data.java}} checked {{/if}}>
     <label class="text-light" for="java">Java </label>
   </div>
   <div>
-    <input class="" type="checkbox" value="phyton" id="phyton" name="phyton">
+    <input class="" type="checkbox" value="phyton" id="phyton" name="phyton" {{#if data.phyton}} checked {{/if}}>
     <label class="text-light" for="phyton"> Phyton </label>
     
-    <input class="ms-5" type="checkbox" value="node" id="node" name="node">
+    <input class="ms-5" type="checkbox" value="node" id="node" name="node" {{#if data.node}} checked {{/if}}>
     <label class="text-light" for="node"> Node JS </label>
   </div>
 </div>

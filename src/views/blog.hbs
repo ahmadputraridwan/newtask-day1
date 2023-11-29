@@ -37,10 +37,10 @@ background-position: center;
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item me-2">
-            <a class="nav-link"  href="/">Home</a>
+            <a class="nav-link  fw-bold"  href="/">Home</a>
           </li>
           <li class="nav-item me-3">
-            <a class="nav-link "  href="/add-blog">Blog</a>
+            <a class="nav-link active"  href="/add-blog">Blog</a>
           </li>
           <li class="nav-item me-2">
             <a class="nav-link" href="/testimoni">Testimonial</a>
@@ -55,50 +55,67 @@ background-position: center;
   </nav>
   <!--end-navbar-->
 
-  <div class="blog container mt-5">
-      <div class="d-flex justify-content-end">
+  <div class="blog container mt-5" >
+      <div class="d-flex justify-content-end " >
         <a class="btn btn-danger px-3 py-1 mb-2" href="add-blog"> Add Blog</a>
       </div>
    <div id="contents">
             {{#each data}}
-            <div class="card mb-3 w-100">
-                <div class="row g-0">
-                    <div class="col-md-4">
+            <div class="card w-100 ">
+                <div class="row g-0 mt-3">
+                    <div class="col-md-3">
                         <img src="/images/blog-img.png" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
                             <h5 class="card-title">
-                                <a href="/blog-detail/id" target="_blank">{{this.pName}}</a>
+                                <a href="/blog-detail/{{@index}}" target="_blank" style="text-decoration: none;">{{this.pName}}</a>
                             </h5>
                             <p>
-                              {{index}}  | {{this.duration}} {{this.postAt}} | Ichsan Emrald Alamsyah
+                               {{this.duration}} | A Putra Ridwan
                             </p>
                             <p class="card-text">{{this.description}}</p>
-                            <p class="card-text"><small class="text-body-secondary">1 seconds ago
+                            <p class="card-text"><small class="text-body-secondary"> {{this.postAt}}
                                 </small></p>
                         </div>
-                        <div class="text-light d-flex gap-3" style="font-size: 20px;">
-            {{#each Technologies}}
-              <i class="fa-brands fa-{{this}}"></i>
-            {{/each}}
-          </div>
+                      <div class="icon" style="font-size: 2em; margin-left: 10px;">
+                      <span class="me-2">
+                        {{#if this.js}}
+                          <i class="fa-brands fa-js"></i>
+                        {{/if}}
+                      </span>
+                      <span class="me-2">
+                        {{#if this.java}}
+                          <i class="fa-brands fa-java"></i>
+                        {{/if}}
+                      </span>
+                      <span class="me-2">
+                        {{#if this.phyton}}
+                          <i class="fa-brands fa-python"></i>
+                        {{/if}}
+                      </span>
+                      <span class="me-2">
+                        {{#if this.node}}
+                           <i class="fa-brands fa-node"></i>
+                        {{/if}}
+                      </span>
+
                     </div>
-                    <div class="col-md-2 d-flex" style="height: fit-content;">
-                        <a href="update-blog/{{@index}}" class="btn btn-secondary">Edit post</a>
+            </div>
+                </div>
+                    <div class="col-md-2 d-flex mt-2">
+                        <a href="update-blog/{{@index}}" class="btn btn-secondary  py-1">Edit post</a>
                         <form method="post" action="delete/{{@index}}">
-                            <button class="btn btn-primary">Delete post</button>
+                            <button class="btn btn-danger" ;>Delete post</button>
                         </form>
                     </div>
-                </div>
-            </div>
             {{/each}}
         </div>
     </div>
 
 
   
-    <footer class="text-center border-top border-dark my-0 text-warning">
+    <footer class="text-center border-top border-dark my-0 text-warning mt-5">
       <p> Create by A Putra Ridwan Susilo Fullstack Developer</p>
     </footer>
   
